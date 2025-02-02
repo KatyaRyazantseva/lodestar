@@ -1,19 +1,15 @@
-import {defineConfig, mergeConfig} from "vitest/config";
-import vitestConfig from "./vitest.config.base.unit.js";
+import {defineConfig} from "vitest/config";
 
-export default mergeConfig(
-  vitestConfig,
-  defineConfig({
-    test: {
-      coverage: {
-        enabled: false,
+export default defineConfig({
+  test: {
+    include: ["**/test/e2e/**/*.test.ts"],
+    poolOptions: {
+      forks: {
+        singleFork: true,
       },
-      pool: "forks",
-      poolOptions: {
-        forks: {
-          singleFork: true,
-        },
+      threads: {
+        singleThread: true,
       },
     },
-  })
-);
+  },
+});

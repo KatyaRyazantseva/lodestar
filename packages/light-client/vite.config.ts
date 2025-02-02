@@ -1,5 +1,5 @@
-import path from "node:path";
 import fs from "node:fs";
+import path from "node:path";
 import {defineConfig, mergeConfig} from "vite";
 import dts from "vite-plugin-dts";
 import {getBaseViteConfig} from "../../configs/vite.config.base.js";

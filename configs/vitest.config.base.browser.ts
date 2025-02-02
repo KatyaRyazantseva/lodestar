@@ -18,21 +18,8 @@ export default defineConfig({
     }),
   ],
   test: {
-    include: ["**/*.test.ts"],
-    exclude: [
-      "**/*.node.test.ts",
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/lib/**",
-      "**/cypress/**",
-      "**/.{idea,git,cache,output,temp}/**",
-      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
-    ],
-    setupFiles: [path.join(__dirname, "../scripts/vitest/setupFiles/customMatchers.ts")],
-    reporters: ["default", "hanging-process"],
-    coverage: {
-      enabled: false,
-    },
+    include: ["**/test/unit/**/*.test.ts"],
+    exclude: ["**/*.node.test.ts"],
     browser: {
       enabled: true,
       headless: true,
